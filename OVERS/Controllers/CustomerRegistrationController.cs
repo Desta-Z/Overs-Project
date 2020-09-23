@@ -24,9 +24,13 @@ namespace OVERS.Controllers
         {
             cd.Add(c);
             cd.SaveChanges();
+            ViewBag.message = "Data has been inserted succesfully";
             return View();
-
-            //VieweBag
+        }
+        public IActionResult DisplayCustomer()
+        {
+            var result = cd.customertbl.ToList();
+            return View(result);
         }
         
     }
